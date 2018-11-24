@@ -11,9 +11,9 @@
     <script type='text/javascript'>
       window.addEventListener('resize', resize, false);
       function initGame() {
-          window.addEventListener('resize', resize, false);
-          window.addEventListener('orientationchange', resize, false);
-          resize();
+          //window.addEventListener('resize', resize, false);
+          //window.addEventListener('orientationchange', resize, false);
+          //resize();
           //new DressGame.Client.GameEngine(); //Внимание к пространству имён (!)
       }
       function resize() {
@@ -25,8 +25,9 @@
           var height;
           height = window.innerHeight;
           width = height / windowRatio;
-          canvas.style.height = height + 'px';
-          canvas.style.width = width + 'px';
+          console.log(height);
+          //canvas.style.height = height + 'px';
+          //canvas.style.width = width + 'px';
       }
     </script>
     <style type='text/css'>
@@ -51,90 +52,22 @@
       #contentElement {
           overflow: hidden;
       }
+      
+
   </style>
 
 </head>
 <body style='padding:0; height:100%; width:100%;' >
-        <div id="mainContainer" class="prerollDiv">
+        <div id="mainContainer" class="prerollDiv" class="container">
             <div id="content" style='display: none'>
                 <video id="contentElement">
                 
                 </video>  
             </div>
-            <div id='game'></div>
+            <div id='game' style="width: 801px; heigth: 700px;"></div>
             <div id="adContainer" style='display: none'></div>
         </div>
     
-    <!--<div class='container' >
-        <div id='content' style='display: none'>
-            <video id='contentElement'></video>
-        </div>
-        <div id='game'></div> 
-        <div id='adContainer' style='display: none'>
-        </div>
-    </div>-->
-    <script src='src/ads2.js'></script>
+    <script src='src/ads.js'></script>
 </body>
 </html>
-
-
-<!--
-<html>
-  <head>
-    <title>IMA HTML5 Simple Demo</title>
-    <style>
-    #mainContainer {
-  position: relative;
-  width: 640px;
-  height: 360px;
-}
-
-#content, #adContainer {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 640px;
-  height: 360px;
-}
-
-#contentElement {
-  width: 640px;
-  height: 360px;
-  overflow: hidden;
-}
-
-#playButton {
-  margin-top:10px;
-  vertical-align: top;
-  width: 350px;
-  height: 60px;
-  padding: 0;
-  font-size: 22px;
-  color: white;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  background: #2c3e50;
-  border: 0;
-  border-bottom: 2px solid #22303f;
-  cursor: pointer;
-  -webkit-box-shadow: inset 0 -2px #22303f;
-  box-shadow: inset 0 -2px #22303f;
-}
-    </style>
-
-  </head>
-
-  <body>
-    <div id="mainContainer">
-      <div id="content">
-        <video id="contentElement">
-        
-        </video>  
-      </div>
-      <div id="adContainer"></div>
-    </div>
-    <button id="playButton">Play</button>
-    <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-    <script type="text/javascript" src="src/ads3.js"></script>
-  </body>
-</html>-->
