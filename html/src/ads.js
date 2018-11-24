@@ -177,7 +177,7 @@ function onAdEvent(adEvent) {
             videoContent.style.display = 'block';
 
             //DressGame.Client.Utils.musicOff();
-
+			window.stopMusic();
             break;
 
         case google.ima.AdEvent.Type.COMPLETE:
@@ -192,7 +192,8 @@ function onAdEvent(adEvent) {
             adContainer.style.display = 'none';
             videoContent.style.display = 'none';
 
-            DressGame.Client.Utils.musicOn();
+            //DressGame.Client.Utils.musicOn();
+            window.playMusic();
             break;
 
         case google.ima.AdEvent.Type.SKIPPED:
@@ -201,6 +202,7 @@ function onAdEvent(adEvent) {
             videoContent.style.display = 'none';
 
             //DressGame.Client.Utils.musicOn();
+            window.playMusic();
             console.log('Ad skiped');
 
             break;
@@ -211,6 +213,7 @@ function onAdEvent(adEvent) {
             videoContent.style.display = 'none';
 
             //DressGame.Client.Utils.musicOn();
+            window.playMusic();
             console.log('Ad closed');
 
             break;
@@ -225,6 +228,7 @@ function onAdError(adErrorEvent) {
     adContainer.style.display = 'none';
     videoContent.style.display = 'none';
     //DressGame.Client.Utils.musicOn();
+    window.playMusic();
 }
 
 function onContentPauseRequested() {
